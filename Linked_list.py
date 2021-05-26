@@ -52,6 +52,19 @@ class LinkedList:
             itr=itr.next
             count+=1
 
+    def insertAfterValue(self,data_after,data):
+        if self.head is None:
+            raise Exception("Linked list is empty")
+        if self.head.data==data_after:
+            self.head.next=Node(data,self.head.next)
+            return
+        itr=self.head
+        while itr:
+            if itr.data==data_after:
+                node=Node(data,itr.next)
+                itr.next=node
+                break
+            itr=itr.next
 
     def getLength(self):
         count=0
@@ -113,3 +126,10 @@ if __name__=="__main__":
     l1.insertAt(12,2)
     l1.print()
     # 2 -->3 -->12 -->4 -->6 -->7
+
+    l1.insertValues(["banana","mango","grapes","orange"])
+    l1.print()
+    l1.insertAfterValue("mango","apple")
+    l1.print()
+    # banana -->mango -->grapes -->orange
+    # banana -->mango -->apple -->grapes -->orange
