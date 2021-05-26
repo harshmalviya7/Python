@@ -90,6 +90,7 @@ class LinkedList:
         while itr:
             if count==index:
                 itr.next=itr.next.next
+                break
             itr=itr.next
             count+=1
 
