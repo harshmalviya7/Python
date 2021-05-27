@@ -2,13 +2,13 @@ import time
 import sys
 sys.setrecursionlimit(1500)
 memo={}
-def fib_recurrsion(n,m={}):
+def fib_recurrsion(n):
     if n == 1:
         return 1
     elif n == 0:
         return 0
     else:
-        num=fib_recurrsion(n-1,m)+fib_recurrsion(n-2,m)
+        num=fib_recurrsion(n-1)+fib_recurrsion(n-2)
 
         return num
 def fib_memoization(n,m={}):
@@ -22,7 +22,7 @@ def fib_memoization(n,m={}):
     m[n]=num
     return num
 # s=time.time()
-# fib_recurrsion(1000,memo)
+# fib_recurrsion(1000)
 # print("Recursion time: ",time.time()-s)
 
 s=time.time()
