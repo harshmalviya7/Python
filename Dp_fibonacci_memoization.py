@@ -11,7 +11,7 @@ def fib_recurrsion(n):
         num=fib_recurrsion(n-1)+fib_recurrsion(n-2)
 
         return num
-def fib_memoization(n,m={}):
+def fib_memoization(n):
     if n in memo:
         return memo[n]
     elif n==1 or n==0:
@@ -26,5 +26,5 @@ def fib_memoization(n,m={}):
 # print("Recursion time: ",time.time()-s)
 
 s=time.time()
-print(fib_memoization(3,memo))
+print(fib_memoization(3))
 print("Memoization: ",time.time()-s)
