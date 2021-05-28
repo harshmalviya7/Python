@@ -1,4 +1,4 @@
-
+#HASHING
 #return index of value which sums to a given no.
 # [ 2, 7, 11, 15 ] , target=9
 # return [0,1] as 2+7 gives 9
