@@ -94,6 +94,18 @@ class LinkedList:
             itr=itr.next
             count+=1
 
+    def reverse_linkedlist(self):
+        if self.head is None:
+            return
+        itr=self.head
+        prev=None
+        while(itr):
+            next=itr.next
+            itr.next=prev
+            prev=itr
+            itr=next
+        self.head=prev
+
 
 if __name__=="__main__":
     l1=LinkedList()
@@ -134,3 +146,5 @@ if __name__=="__main__":
     l1.print()
     # banana -->mango -->grapes -->orange
     # banana -->mango -->apple -->grapes -->orange
+    l1.reverse_linkedlist()
+    l1.print()
